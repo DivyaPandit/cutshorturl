@@ -1,0 +1,1 @@
+SHORT_API_URL = "http://codae.mon/"
