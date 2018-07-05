@@ -12,6 +12,10 @@ class ResourceLocator
 
   before_create :create_short_url
 
+  def view_mini_url
+   SHORT_API_URL + self.mini_url
+  end
+
   private
   def create_short_url
     character_set = ('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a
@@ -19,6 +23,6 @@ class ResourceLocator
     until ResourceLocator.where(mini_url: mini_url).count == 0 
       mini_url = (0..6).map{ character_set[rand(character_set.size)] }.join
     end
-    self.mini_url = SHORT_API_URL + mini_url
+    self.mini_url = mini_url
   end
 end

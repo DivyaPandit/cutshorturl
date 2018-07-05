@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h4 class="text-center mb-4">All Links</h4>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Given url</th>
+      <th>Minified url</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resource_locators.each do |resource_locator| %>
+      <tr>
+        <td width="50%"><%= resource_locator.given_url %></td>
+        <td width="30%"><%= link_to resource_locator.view_mini_url, resource_locator.mini_url, target: '_blank'%></td>
+        <td width="10%"><%= link_to 'Show', resource_locator %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

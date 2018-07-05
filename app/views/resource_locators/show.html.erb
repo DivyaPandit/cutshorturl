@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Given url:</strong>
+  <%= @resource_locator.given_url %>
+</p>
+
+<p>
+  <strong>Mini url:</strong>
+  <%= @resource_locator.view_mini_url %>
+</p>
+
+<p>
+  <strong>Clicks:</strong>
+  <%= @resource_locator.clicks %>
+</p>
+<%= link_to 'Back', resource_locators_path %>

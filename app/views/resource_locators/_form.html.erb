@@ -1,0 +1,10 @@
+<%= form_for :resource_locator, url: resource_locators_path, method: :post do |form| %>
+  <div class="row">
+    <div class="col-md-10">
+      <%= form.text_field :given_url, id: :resource_locator_given_url , class: "form-control mb-2 mr-sm-2", placeholder: "Given url" %>
+    </div>
+    <div class="col-md-2">
+      <%= form.submit "Minify me", class: "btn btn-primary mb-2"%>
+    </div>
+  </div>
+<% end %>
