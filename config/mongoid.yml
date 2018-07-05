@@ -165,9 +165,7 @@ test:
 production:
   clients:
     default:
-      database: cutshort_url_production
-      hosts:
-        - localhost:27017
+      uri: mongodb://admin:admin123@ds127771.mlab.com:27771/cutshort_url_production
       options:
         read:
           mode: :primary
