@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h4 class="text-center mb-4">All Links</h4>
+<h4 class="text-center mb-4">Links Summary</h4>
 
 <table class="table">
   <thead class="thead-dark">
     <tr>
       <th>Given url</th>
       <th>Minified url</th>
-      <th>Action</th>
+      <th>Clicks</th>
     </tr>
   </thead>
 
@@ -16,10 +16,10 @@
       <tr>
         <td width="50%"><%= resource_locator.given_url %></td>
         <td width="30%"><%= link_to resource_locator.view_mini_url, resource_locator.mini_url, target: '_blank'%></td>
-        <td width="10%"><%= link_to 'Show', resource_locator %></td>
+        <td width="10%"><%= resource_locator.clicks %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @resource_locators %>
 <br>

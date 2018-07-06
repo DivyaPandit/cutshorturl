@@ -12,4 +12,8 @@
 //
 //= require rails-ujs
 //= require bootstrap
+//= require jquery
+//= require jquery_ujs
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require_tree .

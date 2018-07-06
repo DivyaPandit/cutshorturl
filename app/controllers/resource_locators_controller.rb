@@ -1,14 +1,19 @@
 class ResourceLocatorsController < ApplicationController
-  before_action :set_resource_locator, only: [:show, :edit, :update, :destroy]
+  before_action :set_resource_locator, only: [:show]
 
   # GET /resource_locators
   # GET /resource_locators.json
   def index
-    @resource_locators = ResourceLocator.all
+    @resource_locators = ResourceLocator.paginate(per_page:15, page:params[:page])
   end
 
   # GET /resource_locators/1
   # GET /resource_locators/1.json
+   ## Action: show
+    # Purpose: Redirect to given mini url if mini_url is sent.
+    # URL:     /resource_locators/:id || /resource_locators/:mini_url
+    # Response: it will redirect to page of mini_url
+    ##
   def show
     if params[:mini_url].present? 
       redirect_to @resource_locator.given_url
@@ -22,8 +27,11 @@ class ResourceLocatorsController < ApplicationController
     @resource_locator = ResourceLocator.new
   end
 
-  # POST /resource_locators
-  # POST /resource_locators.json
+   ## Action: create
+    # Purpose: Redirect to given mini url if min_url is sent.
+    # URL:     POST /resource_locators
+    # Response: it will redirect to page of resource locator
+    ##
   def create
     @resource_locator = ResourceLocator.new(resource_locator_params)
 
@@ -32,14 +40,13 @@ class ResourceLocatorsController < ApplicationController
         format.html { redirect_to @resource_locator, notice: 'Resource locator was successfully created.' }
         format.json { render :show, status: :created, location: @resource_locator }
       else
-        format.html { render :new }
+        format.html { redirect_to root_path }
         format.json { render json: @resource_locator.errors, status: :unprocessable_entity }
       end
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_resource_locator
       if params[:id].present?
         @resource_locator = ResourceLocator.find(params[:id])

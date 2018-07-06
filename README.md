@@ -1,24 +1,17 @@
-# README
+# cutshort_url
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+cutshort_url is application which minifies URL given by any user.It shows top 100 minified urls which is based on number of clicks.
 
-Things you may want to cover:
+## Requirement
+* Ruby - 2.4.4
 
-* Ruby version
+* Database - MongoDB
 
-* System dependencies
+* Rails - 5
 
-* Configuration
+## Install
+  Clone repository.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+  bundle install
+```
