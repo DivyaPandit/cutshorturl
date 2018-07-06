@@ -28,7 +28,7 @@ class ResourceLocator
   #
   def create_short_url
     character_set = ('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a
-    mini_url = (0..6).map{ character_set[rand(character_set.size)] }.join
+    mini_url = (0...6).map{ character_set[rand(character_set.size)] }.join
     until ResourceLocator.where(mini_url: mini_url).count == 0 
       mini_url = (0...6).map{ character_set[rand(character_set.size)] }.join
     end
