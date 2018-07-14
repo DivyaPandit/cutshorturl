@@ -5,3 +5,5 @@ elsif Rails.env.production?
 else
   SHORT_API_URL = "rocky-bastion-49113.herokuapp.com"
 end
+
+CHARACTER_SET =  ('a'..'z').to_a + (2..7).to_a

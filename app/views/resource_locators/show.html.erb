@@ -1,17 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Given url:</strong>
-  <%= @resource_locator.given_url %>
-</p>
-
-<p>
-  <strong>Mini url:</strong>
-  <%= @resource_locator.view_mini_url %>
-</p>
-
-<p>
-  <strong>Clicks:</strong>
-  <%= @resource_locator.clicks %>
-</p>
-<%= link_to 'Back', resource_locators_path %>
+<div class="col-md-8">
+  <div class="card resource-link-card mt-4">
+    <div class="card-body">
+      <p title="<%= @resource_locator.given_url %>"><%= @resource_locator.given_url %></p>
+      <div class="row">
+        <div class="col-md-9">
+          <p class="card-text">
+            <%= link_to @resource_locator.view_mini_url, @resource_locator.mini_url, target: '_blank', class: "text-small text-muted" %>
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p class="text-muted form-text text-small">
+            <%= @resource_locator.clicks %> clicks
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+<div class="col-md-4">
+  <%= link_to 'Back', resource_locators_path %>
+</div>
