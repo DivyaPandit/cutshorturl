@@ -33,8 +33,7 @@ class ResourceLocatorsController < ApplicationController
     # Response: It will return newly created resource locator
     ##
   def create
-    # @resource_locator = ResourceLocator.find_or_create_by(given_url:resource_locator_params[:given_url])
-    @resource_locator = ResourceLocator.new
+    @resource_locator = ResourceLocator.find_or_create_by(given_url:resource_locator_params[:given_url])
     @resource_locator.assign_attributes(resource_locator_params)
     respond_to do |format|
       if @resource_locator.save
